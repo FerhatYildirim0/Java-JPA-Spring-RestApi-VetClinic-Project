@@ -1,0 +1,1783 @@
+{
+	"info": {
+		"_postman_id": "ef84791b-6f97-4c5d-8e30-8b74e0ad72ac",
+		"name": "Pet Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pet Service",
+			"item": [
+				{
+					"name": "Agenda",
+					"item": [
+						{
+							"name": "Agenda --> ADD",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"agdate\": \"string\",\r\n  \"agtext\": \"string\",\r\n  \"agtime\": \"string\",\r\n  \"agtitle\": \"string\",\r\n  \"id\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/agendaR/agadd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"agendaR",
+										"agadd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agenda --> LIST",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "ferhat@mail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/agendaR/aglist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"agendaR",
+										"aglist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agenda --> DELETE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/agendaR/agdelete/a5d6a7a6-d0a6-4c32-97d6-51e2b5665d3e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"agendaR",
+										"agdelete",
+										"a5d6a7a6-d0a6-4c32-97d6-51e2b5665d3e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Customer --> ADD",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{  \r\n     \"cid\": 24,\r\n    \"cname\" : \"Hasan2\",\r\n    \"ctel\" : \"05123243\",\r\n    \"csurname\" : \"Doğan2\",\r\n    \"ctel_2\" : \"012215213\",\r\n    \"cmail\" : \"Hasan2@mail.com\",\r\n    \"ctax_office\" : \"Beykoz\",\r\n    \"cnote\" : \"İlaç\",\r\n    \"ccitizenship\" : 12321312,\r\n    \"cdiscount\" : 12,\r\n    \"ccity\" : \"İstanbul\",\r\n    \"ctown\" : \"Beşiktaş\",\r\n    \"caddress\" : \"Adres\",\r\n    \"cdate\" : \"2021-10-01\",\r\n    \"cdebpt\" :0,\r\n    \"pets\" : [  ]\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/customerR/cuadd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cuadd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> DELETE",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/customerR/cudelete/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cudelete",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer(Projection) --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/customerR/culist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"culist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer(Pet) --> ADD",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"pname\": \"Yeşil\",\r\n            \"pchip\": 33,\r\n            \"pearnumber\": \"342\",\r\n            \"pbirthday\": \"2021-09-10T21:00:00.000+00:00\",\r\n            \"ptype\": 1,\r\n            \"pspay\": 1,\r\n            \"prace\": \"1\",\r\n            \"pcolor\": 1,\r\n            \"pgender\": 1,\r\n      \"cid\": \r\n          {\r\n            \"cid\": 22,\r\n            \"cname\": \"Adem\",\r\n            \"csurname\": \"Mecit\",\r\n            \"ctel\": \"05123243\",\r\n            \"ctel_2\": \"012215213\",\r\n            \"cmail\": \"adem@mail.com\",\r\n            \"ctax_office\": \"Etiler\",\r\n            \"cnote\": \"Tr\",\r\n            \"ccitizenship\": 12321312,\r\n            \"cdiscount\": 12,\r\n            \"ccity\": \"İstanbul\",\r\n            \"ctown\": \"MecidiyeKöy\",\r\n            \"caddress\": \"Adres\",\r\n            \"cdate\": \"2021-10-01\",\r\n            \"cdebpt\": 0\r\n            \r\n      }\r\n\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/customerR/cupetadd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cupetadd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> Search",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/customerR/cusearch/Alper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cusearch",
+										"Alper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> SingleSearch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/customerR/cusearchS/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cusearchS",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/customerR/cuAllList",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cuAllList"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"cid\": 23,\r\n    \"cname\" : \"HasanDeneme2\",\r\n    \"ctel\" : \"05123243\",\r\n    \"csurname\" : \"Doğan222\",\r\n    \"ctel_2\" : \"012215213\",\r\n    \"cmail\" : \"Hasan2@mail.com\",\r\n    \"ctax_office\" : \"Beykoz\",\r\n    \"cnote\" : \"İlaç\",\r\n    \"ccitizenship\" : 12321312,\r\n    \"cdiscount\" : 12,\r\n    \"ccity\" : \"İstanbul\",\r\n    \"ctown\" : \"Beşiktaş\",\r\n    \"caddress\" : \"Adres\",\r\n    \"cdate\" : \"2021-10-01\",\r\n    \"cdebpt\" :0,\r\n    \"pets\" : [  ]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/customerR/cuupdate/24",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"cuupdate",
+										"24"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer --> ListP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/customerR/listp/0/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"customerR",
+										"listp",
+										"0",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Suppliers",
+					"item": [
+						{
+							"name": "Suppliers --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/suppliersR/sulist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliersR",
+										"sulist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Suppliers --> AddAndUpdate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n                \"suname\": \"Tedarikçi 12\",\r\n            \"sumail\": \"supp12@mail.com\",\r\n            \"sutel\": \"54213284\",\r\n            \"suactive\": 1,\r\n            \"sudebt\": 4548\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/suppliersR/suaddUpdate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliersR",
+										"suaddUpdate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Suppliers --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/suppliersR/sudelete/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliersR",
+										"sudelete",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Suppliers --> Single",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/suppliersR/suSingle/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"suppliersR",
+										"suSingle",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Product --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/productR/prlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"productR",
+										"prlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product --> AddUpdate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n   \r\n            \"prname\": \"DENEME 2\",\r\n            \"prunit\": 2,\r\n            \"prtype\": 2,\r\n            \"prcategory\": 2,\r\n            \"prsupplier\": 2,\r\n            \"prbarcode\": \"232\",\r\n            \"prcode\": \"55\",\r\n            \"prbuying\": 24,\r\n            \"prsales\": 14,\r\n            \"prtax\": 1,\r\n            \"practive\": 1,\r\n            \"prtaxincluded\": 1,\r\n            \"prstock\": 30\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/productR/praddUpdate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"productR",
+										"praddUpdate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/productR/prdelete/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"productR",
+										"prdelete",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product --> Single",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/productR/prsingle/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"productR",
+										"prsingle",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vaccine",
+					"item": [
+						{
+							"name": "Vaccine --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/vaccineR/valist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"vaccineR",
+										"valist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vaccine --> AddUpdate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {       \"vacname\": \"Covid-19 Gama\",\r\n            \"vacunit\": 2,\r\n            \"vactype\": 1,\r\n            \"vaccategory\": 2,\r\n            \"vacsupplier\": 1,\r\n            \"vacbarcode\": \"25498\",\r\n            \"vaccode\": \"46855\",\r\n            \"vacbuying\": 1230,\r\n            \"vacsales\": 5691,\r\n            \"vactax\": 2,\r\n            \"vactaxincluded\": 1,\r\n            \"vacstock\": 1044,\r\n            \"vacactive\": 1,\r\n            \"vacpettype\": 1,\r\n            \"vacrepeat\": 42\r\n } ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/vaccineR/vaaddUpdate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"vaccineR",
+										"vaaddUpdate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vaccine --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/vaccineR/vadelete/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"vaccineR",
+										"vadelete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vaccine --> Active",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/vaccineR/prActiveCount",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"vaccineR",
+										"prActiveCount"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vaccine --> SingleVaccine",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/vaccineR/singleVac/1001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"vaccineR",
+										"singleVac",
+										"1001"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pet",
+					"item": [
+						{
+							"name": "Pet --> List",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "ferhat@mail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/petR/petlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"petR",
+										"petlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pet --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "      {     \"pname\": \"Turuncu\",\r\n            \"pchip\": 555,\r\n            \"pearnumber\": \"451\",\r\n            \"pbirthday\": \"2021-10-01T21:00:00.000+00:00\",\r\n            \"ptype\": 1,\r\n            \"pspay\": 1,\r\n            \"prace\": \"1\",\r\n            \"pcolor\": 1,\r\n            \"pgender\": 1,\r\n            \"cid\":  \r\n               {  \"cid\": 21,\r\n            \"cname\": \"Aslan\",\r\n            \"csurname\": \"Akbey\",\r\n            \"ctel\": \"05123243\",\r\n            \"ctel_2\": \"012215213\",\r\n            \"cmail\": \"aslan@mail.com\",\r\n            \"ctax_office\": \"Çankaya\",\r\n            \"cnote\": \"Tr\",\r\n            \"ccitizenship\": 12321312,\r\n            \"cdiscount\": 12,\r\n            \"ccity\": \"Ankara\",\r\n            \"ctown\": \"Sarıyer\",\r\n            \"caddress\": \"Adres\",\r\n            \"cdate\": \"2021-09-30\",\r\n            \"cdebpt\": 0\r\n                }\r\n                \r\n                \r\n\r\n    } ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/petR/petaddUpdate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"petR",
+										"petaddUpdate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pet --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/petR/petdelete/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"petR",
+										"petdelete",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pet --> Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n         \r\n        \"pname\": \"TuruncuDeneme\",\r\n            \"pchip\": 555,\r\n            \"pearnumber\": \"451\",\r\n            \"pbirthday\": \"2021-10-01T21:00:00.000+00:00\",\r\n            \"ptype\": 1,\r\n            \"pspay\": 1,\r\n            \"prace\": \"1\",\r\n            \"pcolor\": 1,\r\n            \"pgender\": 1,\r\n            \"cid\":  \r\n               {  \"cid\": 21,\r\n            \"cname\": \"Aslan\",\r\n            \"csurname\": \"Akbey\",\r\n            \"ctel\": \"05123243\",\r\n            \"ctel_2\": \"012215213\",\r\n            \"cmail\": \"aslan@mail.com\",\r\n            \"ctax_office\": \"Çankaya\",\r\n            \"cnote\": \"Tr\",\r\n            \"ccitizenship\": 12321312,\r\n            \"cdiscount\": 12,\r\n            \"ccity\": \"Ankara\",\r\n            \"ctown\": \"Sarıyer\",\r\n            \"caddress\": \"Adres\",\r\n            \"cdate\": \"2021-09-30\",\r\n            \"cdebpt\": 0\r\n                }\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/petR/petupdate/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"petR",
+										"petupdate",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pet --> SingleResult",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/petR/petSingle/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"petR",
+										"petSingle",
+										"13"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Calendar",
+					"item": [
+						{
+							"name": "Calendar --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/calendarR/calist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendarR",
+										"calist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calendar --> AddAndUpdate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {        \"cid\": 3,\r\n            \"cname\": \"Hastaa3\",\r\n            \"ccolor\": \"#32a853\\r\\n\",\r\n            \"cbgColor\": \"#32a855\\r\\n\",\r\n            \"cdragBgColor\": \"#32a853\\r\\n\",\r\n            \"cborderColor\": \"#32a853\\r\\n\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/calendarR/caaddUpdate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendarR",
+										"caaddUpdate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calendar --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/calendarR/cadelete/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendarR",
+										"cadelete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Storage",
+					"item": [
+						{
+							"name": "Storage --> List (stid desc)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/storageR/stlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"storageR",
+										"stlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/storageR/stdelete/27",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"storageR",
+										"stdelete",
+										"27"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"Postman\",\r\n     \"lastName\" : \"Deneme\",\r\n    \"email\" : \"postman@mail.com\",\r\n    \"password\" : \"123\",\r\n     \"enabled\" : true,\r\n    \"tokenExpired\" : true,\r\n    \"roles\" : [\r\n        { \"id\":4, \"name\":\"ROLE_SUPERADMIN\"}\r\n\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/user/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"user",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/user/delete/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"user",
+										"delete",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ScheduleCalendar",
+					"item": [
+						{
+							"name": "Calendar --> List By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/calendar/listSchedule/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendar",
+										"listSchedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calendar --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n           \r\n            \"id\": \"c77a5920-1ef9-52d0-895d-0cf8ad83333\",\r\n            \"title\": \"deneme\",\r\n            \"isAllDay\": true,\r\n            \"start\": \"Wed Sep 22 2021 00:00:00 GMT+0300 (GMT+03:00)\",\r\n            \"end\": \"Wed Sep 22 2021 23:59:59 GMT+0300 (GMT+03:00)\",\r\n            \"category\": \"allday\",\r\n            \"dueDateClass\": \"\",\r\n            \"color\": \"#32a832\\r\\n\",\r\n            \"bgColor\": \"#32a832\\r\\n\",\r\n            \"dragBgColor\": \"#32a832\\r\\n\",\r\n            \"borderColor\": \"#32a832\\r\\n\",\r\n            \"location\": \"asd\",\r\n            \"raw\": \"public\",\r\n            \"state\": \"Meşgul\",\r\n            \"calendarId\": \"1\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/calendar/addSchedule",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendar",
+										"addSchedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calendar --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/calendar/deleteSchedule/c77a5920-1ef9-52d0-895d-0cf8ad83333",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"calendar",
+										"deleteSchedule",
+										"c77a5920-1ef9-52d0-895d-0cf8ad83333"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Labor",
+					"item": [
+						{
+							"name": "Labor --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n   \"laname\" : \"DENEME\",\r\n   \"lamoney\" : 50\r\n\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/labor/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"labor",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Labor --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/labor/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"labor",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Labor --> Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n           \r\n            \"laname\": \"Saç Kesimi\",\r\n            \"lamoney\": 250\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/labor/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"labor",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Labor --> Single",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/labor/singleLabor/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"labor",
+										"singleLabor",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/labor/delete/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"labor",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MoneyCase",
+					"item": [
+						{
+							"name": "MoneyCase --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/case/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"case",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MoneyCase --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n       {\r\n                \"cmoney\":1500,\r\n            \"cbuysell\": 2,\r\n            \"cdatenow\": \"2021-09-25T19:15:52.000+00:00\",\r\n            \"cpeople\": \"Ferhat\",\r\n            \"cname\": \"deneme@mail.com\",\r\n            \"ccomment\": \"Satış\"\r\n            \r\n            }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/case/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"case",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MoneyCase --> Remove",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "         {    \"cmoney\":12333,\r\n            \"cbuysell\": 2,\r\n            \"cdatenow\": \"2021-09-25T19:15:52.000+00:00\",\r\n            \"cpeople\": \"Ferhat\",\r\n            \"cname\": \"deneme@mail.com\",\r\n            \"ccomment\": \"Satış\"\r\n            }  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/case/remove",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"case",
+										"remove"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sale",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/sale/deleteSale/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"sale",
+										"deleteSale",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sale --> StatusChanger",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/sale/saleStatus/12345",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"sale",
+										"saleStatus",
+										"12345"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sale --> Add",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "alper@mail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cname\": \"Ferhat\",\r\n  \"faturaNo\": 12345,\r\n  \"grossPrice\": 2000,\r\n  \"netPrice\": 2000,\r\n  \"note\": \"sCCCCC\",\r\n  \"pamount\": 10,\r\n  \"pdiscount\": 0,\r\n  \"pname\": \"10\",\r\n  \"pprice\": 100,\r\n  \"proType\": 1,\r\n  \"purType\": 1,\r\n  \"saleDate\": \"2021-10-03T14:53:57.761Z\",\r\n  \r\n  \"status\": false,\r\n  \"tax_type\": 0,\r\n  \"totalPrice\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/sale/saleinsert",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"sale",
+										"saleinsert"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buying",
+					"item": [
+						{
+							"name": "Buying --> StatusChanger",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/buying/statusChange/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"buying",
+										"statusChange",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buying --> Delete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/buying/deleteBuying/103",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"buying",
+										"deleteBuying",
+										"103"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buying --> DeleteList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/buying/deleteListBuying/104",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"buying",
+										"deleteListBuying",
+										"104"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buying --> Add",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "alper@mail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bfaturaNo\": 1,\r\n  \"bgrossPrice\": 0,\r\n  \r\n  \"bnetPrice\": 0,\r\n  \"bnote\": \"string\",\r\n  \"btotalPrice\": 3000,\r\n  \"buyingDate\": \"2021-10-03T15:32:34.429Z\",\r\n  \"pdiscount\": 0,\r\n  \"pname\": \"11\",\r\n  \"proamount\": 100,\r\n  \"probirim\": 1,\r\n  \"proprice\": 10,\r\n  \"purtype\": 1,\r\n  \"status\": 0,\r\n  \"taxtype\": 1,\r\n  \"tname\": \"9\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/buying/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"buying",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buying --> BoxList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/buying/buyingDetail/562917693",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"buying",
+										"buyingDetail",
+										"562917693"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cure",
+					"item": [
+						{
+							"name": "Cure --> List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/cure/listAllCure",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"cure",
+										"listAllCure"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cure --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n         \"curtitle\" : \"Denemedddddddddddeeeee\",\r\n         \"curcomment\" : \"oldu\",\r\n    \"curdebt\": 200,\r\n    \"pet\" : {\r\n\r\n           \"pid\" : 4,\r\n           \"pname\": \"sdfdsf\",\r\n           \"pchip\": 4354, \r\n           \"pearnumber\" : \"73\",\r\n          \"pbirthday\": \"2021-09-16\",\r\n             \"ptype\": 2,\r\n             \"pspay\": 2,\r\n              \"prace\": 2,\r\n             \"pcolor\": 2,\r\n              \"pgender\": 1,\r\n            \"cid\":{\r\n                        \"cid\": 15,\r\n        \"cdebpt\": null,\r\n        \"cname\": \"asdasdasd\",\r\n        \"cmail\": \"asda@mail.com\",\r\n        \"cdate\": \"2021-09-17 02:22:39\",\r\n        \"cdiscount\": null,\r\n        \"csurname\": \"asdasd\",\r\n        \"cnote\": \"\",\r\n        \"ctax_office\": \"\",\r\n        \"ctel\": \"\",\r\n        \"ctel_2\": \"\",\r\n        \"ctown\": \"\",\r\n        \"caddress\": \"\",\r\n        \"ccitizenship\": null,\r\n        \"ccity\": \"\"\r\n            }\r\n    },\r\n    \"curvac\" : {\r\n             \"vacid\": 1000,\r\n            \"vacname\": \"son\",\r\n            \"vacunit\": 2,\r\n            \"vactype\": 1,\r\n            \"vaccategory\": 2,\r\n            \"vacsupplier\": 1,\r\n            \"vacbarcode\": \"242\",\r\n            \"vaccode\": \"42424\",\r\n            \"vacbuying\": 2424,\r\n            \"vacsales\": 24,\r\n            \"vactax\": 2,\r\n            \"vactaxincluded\": 1,\r\n            \"vacstock\": 115357,\r\n            \"vacactive\": 1,\r\n            \"vacpettype\": 1,\r\n            \"vacrepeat\": 42,\r\n              \"storages\": []\r\n    },\r\n    \"curpro\": {\r\n              \"prid\": 5,\r\n            \"prname\": \"SON\",\r\n            \"prunit\": 2,\r\n            \"prtype\": 2,\r\n            \"prcategory\": 2,\r\n            \"prsupplier\": 2,\r\n            \"prbarcode\": \"242\",\r\n            \"prcode\": \"44\",\r\n            \"prbuying\": 24,\r\n            \"prsales\": 44,\r\n            \"prtax\": 1,\r\n            \"practive\": 1,\r\n            \"prtaxincluded\": 1,\r\n            \"prstock\": 0,\r\n              \"storages\": []\r\n    },\r\n    \"curla\" :  {\r\n                    \"laid\": 2,\r\n            \"laname\": \"Kısırlaştırma Ameliyatı\",\r\n            \"lamoney\": 750\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/cure/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"cure",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cure --> Single Search",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/cure/singleCure/21",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"cure",
+										"singleCure",
+										"21"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cure --> Delete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/cure/deleteCure/22",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"cure",
+										"deleteCure",
+										"22"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lab",
+					"item": [
+						{
+							"name": "Lab --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fileName",
+											"type": "file",
+											"src": "/C:/Users/Bilgisayar/Downloads/indir.jpg"
+										},
+										{
+											"key": "ltitle",
+											"value": "AA",
+											"type": "text"
+										},
+										{
+											"key": "pid",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "ldate",
+											"value": "AAA",
+											"type": "text"
+										},
+										{
+											"key": "lcomment",
+											"value": "BBB",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/lab/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"lab",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Lab --> Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/lab/delete/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"lab",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Register --> Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"email\": \"dead3@mail.com\",\r\n  \"enabled\": true,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"password\": \"12\",\r\n  \"roles\": [\r\n    {\r\n      \"id\": 3,\r\n      \"name\": \"ROLE_CUSTOMER\"\r\n\r\n    }\r\n  ],\r\n  \"tokenExpired\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/register/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"register",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PasswordChanger",
+					"item": [
+						{
+							"name": "Password --> Changer",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "ferhat@mail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/password/changer?token=03ba5761-13fb-43b8-8d4f-d58d5eed1c1f&email=dead3@mail.com&newPass=123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"password",
+										"changer"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "03ba5761-13fb-43b8-8d4f-d58d5eed1c1f"
+										},
+										{
+											"key": "email",
+											"value": "dead3@mail.com"
+										},
+										{
+											"key": "newPass",
+											"value": "123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Password --> Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/password/request",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"password",
+										"request"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "12",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "ferhat@mail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
